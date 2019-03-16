@@ -1,0 +1,16 @@
+<% include ./partials/header %>
+
+
+<div class ="province">
+<div class = "container">
+<h1 class ="provinceheading text-dark"> Select Your Provice </h1>
+<% province.forEach(function(pro){ %>
+
+   <a class="btn btn-secondary btn-lg  bg-dark" href = "/<%=pro%>/city" role="button"><%= pro%></a>
+   
+    
+
+<% }) %>
+</div>
+</div>
+<% include ./partials/footer %>

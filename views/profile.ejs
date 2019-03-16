@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+<div class ="container">
+<h3 class="accountTitle">Account Information</h3>
+
+<div id = "profilepicture">
+  <img src ="">  
+</div>
+<div id = "contactinfo">
+ 
+    <p><strong>Username: </strong><span><%=currentUser.username%></span></p>
+ 
+</div>
+
+<div id = "buyandsellsection">
+   <a class="btn btn-primary" href="/buyandsell/addNewItem" role="button">Post Advert</a><span></span>
+   <a class="btn btn-primary" href="/province" role="button">Available items for Sale</a>
+</div>
+<div >
+ <h3 class ="profileDesTitle">Items You are selling at this time</h3>
+ <% selleritem.forEach(function(item){ %>
+<div class = "availableitems">
+    <spam>
+        <img src ="<%= item.picture1 %> " height="20" width="20">
+        <img src ="<%= item.picture2 %>" height="20" width="20">
+        <img src ="<%= item.picture3 %> " height="20" width="20">
+        <img src ="<%= item.picture4 %>" height="20" width="20">
+        <img src ="<%= item.picture5 %> " height="20" width="20">
+        <img src ="<%= item.picture6 %>" height="20" width="20">
+        <img src ="<%= item.picture7 %> " height="20" width="20">
+        <img src ="<%= item.picture8 %>" height="20" width="20">
+    </spam>
+     <span>Name :</span><spam><%=item.title%></spam>
+    <span>Price :</span><spam><%=item.price%></spam>
+    <span>Date :</span><spam><%=item.create.toDateString()%></spam>
+    <span>Location :</span><spam><%=item.city%></spam>
+    <a href = "/selleritem/items/<%= item._id  %>" class="btn btn-danger btn-sm">Delete or Edit</a>
+</div>
+<% }) %>
+ 
+ 
+</div>
+
+    
+</div>
+

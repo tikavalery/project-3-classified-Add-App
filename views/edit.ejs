@@ -1,0 +1,163 @@
+<% include ./partials/header %>
+<% var allCities = []%>
+<% var farNorth1 = citydata.farNorth%>
+<% var north1 = citydata.north%>
+<% var adamawa1 = citydata.adamawa%>
+<% var northWest1 = citydata.northWest%>
+<% var southWest1 = citydata.southWest%>
+<% var littoral1 = citydata.littoral%>
+<% var center1 = citydata.center%>
+<% var west1 = citydata.west%>
+<% var south1 = citydata.south%>
+<% var east1 = citydata.east%>
+<% var allCitiesCombine = allCities.concat(farNorth1,north1,adamawa1,northWest1,southWest1,littoral1,center1,west1,south1,east1 )%>
+<% var allCitiesSorted = allCitiesCombine.sort()%>
+<% var condition = ["New","Used","Refurbished","For Parts"]%>
+<% var category=["funiture","cars","cloths","cosmetics","bycicles","Cars","Books", "Jewelry",
+                       "Houses and Land","Parts","Electronics","Equipment","Households","Toys",
+                       "Tools", " Services","Wanted","Others","Shoes"]%>
+<div class="container">
+<h2 class ="accountTitle">Change Inputs</h2>
+     
+<div>
+    
+    <form action = "/items/<%=editItem._id %>?_method=PUT" method = "POST">
+       <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Enter</span>
+              </div>
+                <input type="text" name = "item[title]" value = "<%=editItem.title%>" placeholder = "Product Title"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+            <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Enter</span>
+              </div>
+                <input type="number" value = "<%=editItem.price%>" name = "item[price]" placeholder = "Product Price"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+       <div class="newSubmit">
+          <div class="input-group ">
+              <div class="input-group-prepend">
+               <span class="input-group-text">Enter Detailed Description</span>
+                </div>
+          <textarea type="text" name = "item[description]" class="form-control" aria-label="With textarea"><%=editItem.description%></textarea>
+          </div>  
+    </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture1]" placeholder = "Image" value = "<%=editItem.picture1%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture2]" placeholder = "Image" value = "<%=editItem.picture2%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture3]" placeholder = "Image" value = "<%=editItem.picture3%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture3]" placeholder = "Image" value = "<%=editItem.picture4%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture5]" placeholder = "Image" value = "<%=editItem.picture5%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture6]" placeholder = "Image" value = "<%=editItem.picture6%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture7]" placeholder = "Image" value = "<%=editItem.picture7%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+              </div>
+                <input type="text" name = "item[picture8]" placeholder = "Image" value = "<%=editItem.picture8%>" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+          <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Choose</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01" name = "item[condition]">
+    <option selected>Condition</option>
+      <% condition.forEach(function(pro){ %>
+             <option value="<%=pro%>"><%=pro%></option>
+            <% }) %>
+  </select>
+</div>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Choose</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01" name = "item[category]">
+    <option selected>Category</option>
+      <% category.forEach(function(pro){ %>
+             <option value="<%=pro%>"><%=pro%></option>
+            <% }) %>
+  </select>
+</div>
+
+ <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Choose</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01" name = "item[province]">
+    <option selected>Province</option>
+      <% province.forEach(function(pro){ %>
+             <option value="<%=pro%>"><%=pro%></option>
+            <% }) %>
+  </select>
+</div>  
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Choose</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01" name = "item[city]">
+    <option selected>City</option>
+      <% allCitiesSorted.forEach(function(pro){ %>
+             <option value="<%=pro%>"><%=pro%></option>
+            <% }) %>
+  </select>
+</div>  
+       <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Enter</span>
+              </div>
+                <input type="text" name = "item[sellername]" value = "<%=editItem.sellername%>" placeholder = "Your Name"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+       <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Enter</span>
+              </div>
+                <input type="text" name = "item[selleremail]" value = "<%=editItem.selleremail%>" placeholder = "Your Email"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+            
+          <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="inputGroup-sizing-default">Enter</span>
+              </div>
+                <input type="text" name = "item[sellerphonenumber]"  value = "<%=editItem.sellerphonenumber%>" placeholder = "Your Phone Number"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>   
+        
+        <input type = "submit">
+    </form>
+</div>
+</div>
+<% include ./partials/footer %>

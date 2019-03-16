@@ -1,0 +1,72 @@
+body{
+    background-image: linear-gradient(to right,gray,white);
+    /*background-image: url(https://joyhost.co.za/wp-content/uploads/2018/01/Small-Business-Website-Emails-3.png);*/
+    color: black;
+}
+
+.provinceheading{
+  font-size: 30px;
+  margin-bottom: 20px;
+  padding:30px;
+  color:white;
+}
+
+.btn{
+   color:white;
+   width: 200px;
+}
+
+.allitems{
+     background-color: white;
+     margin-bottom: 15px;
+}
+.moreInfoPic{
+ 
+  width: 40vw;
+  height: 35vh;
+  color:black;
+  /*border:5px solid red;*/
+}
+.intemSingle{
+   color:black;
+   margin-bottom: 25px;
+}
+
+.carousel{
+ height: 400px;
+ width: 35vw;
+ /*border:5px solid green;*/
+}
+
+.itemDescription{
+   /*border:5px solid red;*/
+   width: 40vw;
+   height: 60vh;
+   position: absolute;
+   right: 8%;
+   top: 12%;
+
+}
+.mainDescription{
+   margin-top: 20px;
+}
+.availableitems{
+   margin-bottom: 10px;
+}
+.profileDesTitle {
+   margin-bottom: 15px;
+   margin-top: 30px;
+}
+.accountTitle{
+   margin-bottom: 30px;
+   margin-top: 30px;
+}
+
+.sellerMoreTitle{
+  margin-bottom: 30px;
+   margin-top: 70px; 
+}
+
+.cardheader{
+ margin: 0 auto;  
+}

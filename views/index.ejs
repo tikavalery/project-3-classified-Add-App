@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+<div class="container p-3 mb-2 bg-light text-dark">
+<h1><%= items[0].category %> for sale in <%= items[0].city %> </h1>
+
+
+<% items.forEach(function(item){ %>
+<div class ="allitems">
+    <spam>
+        <img src ="<%= item.picture1 %> " height="20" width="20">
+        <img src ="<%= item.picture2 %>" height="20" width="20">
+        <img src ="<%= item.picture3 %> " height="20" width="20">
+        <img src ="<%= item.picture4 %>" height="20" width="20">
+        <img src ="<%= item.picture5 %> " height="20" width="20">
+        <img src ="<%= item.picture6 %>" height="20" width="20">
+        <img src ="<%= item.picture7 %> " height="20" width="20">
+        <img src ="<%= item.picture8 %>" height="20" width="20">
+    </spam>
+     <strong >Title :</strong><spam><%=item.title%></spam>
+    <strong >Price :</strong><spam><%=item.price%></spam>
+    <strong >Date Posted :</strong><spam><%=item.create.toDateString()%></spam>
+    <strong>Location :</strong><spam><%=item.city%></spam>
+    <a href = "/items/<%= item._id  %>">Read More</a>
+</div>
+<% }) %>
+  </div> 
+<% include ./partials/footer %>

@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+<div class ="container">
+    <h1 class ="provinceheading text-dark"> Select the category you are interested in</h1>
+<% var categoryTown = category[0]%>
+<%  category.shift()%>
+
+
+<% var city = category[category.length-1]%>
+<% var province = category[category.length-2]%>
+
+<div class ="province">
+<div class = "container">
+<% category.forEach(function(catego){ %>
+
+   <a class="btn btn-secondary btn-lg bg-dark" href = "/<%=province%>/<%=city%>/<%= catego %>" role="button"><%= catego%></a>
+    
+
+<% }) %>
+</div>
+</div>
+</div>
+<% include ./partials/footer %>

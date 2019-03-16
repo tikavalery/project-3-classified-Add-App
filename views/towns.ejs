@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+
+<div class ="province">
+<div class = "container">
+ <h1 class ="provinceheading text-dark"> Select Your town  </h1>   
+<!--Extracting the last element in the cities arrays which is the province that was pushed to use as request.params-->
+<p><% var province = cities[cities.length-1]%></p>
+<% cities.forEach(function(city){ %>
+
+    
+   <a class="btn btn-secondary btn-lg bg-dark" href = "/<%=province%>/<%=city%>/category" role="button"><%= city%></a>
+    
+
+<% }) %>
+</div>
+</div>
+<% include ./partials/footer %>
